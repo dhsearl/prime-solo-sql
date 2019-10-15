@@ -7,6 +7,9 @@ SELECT * FROM "accounts"
 WHERE "username" ILIKE '%a%';
 
 -- Question 3
+SELECT * FROM "accounts"
+WHERE account_balance=0.00 AND transactions_attempted=0;
+
 UPDATE "accounts" SET account_balance = '10.00'
 WHERE account_balance=0.00 AND transactions_attempted=0;
 
@@ -19,3 +22,36 @@ SELECT username, account_balance FROM "accounts"
 ORDER BY account_balance LIMIT 3;
 
 -- Question 6
+SELECT username, account_balance FROM "accounts"
+ORDER BY account_balance ASC LIMIT 3;
+
+-- Question 7
+SELECT * FROM "accounts"
+WHERE account_balance >100;
+
+-- Question 8
+INSERT INTO accounts(username, city, transactions_completed, transactions_attempted, account_balance) 
+VALUES ('dave','minneapolis',0,0,1000.00);
+
+-- Question 9
+SELECT * FROM "accounts"
+WHERE (city='miami' OR city='phoenix') AND transactions_completed <5;
+
+DELETE FROM "accounts"
+WHERE (city='miami' OR city='phoenix') AND transactions_completed <5;
+
+-- Question 10
+SELECT * FROM "accounts"
+WHERE username='anthony';
+
+UPDATE "accounts" SET city="Santa Fe"
+WHERE username='anthony';
+
+-- Question 11
+SELECT * FROM "accounts"
+WHERE username='grace';
+
+DELETE FROM "accounts"
+WHERE user_id=9;
+
+-- Question 12
