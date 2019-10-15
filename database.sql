@@ -40,18 +40,25 @@ WHERE (city='miami' OR city='phoenix') AND transactions_completed <5;
 DELETE FROM "accounts"
 WHERE (city='miami' OR city='phoenix') AND transactions_completed <5;
 
--- Question 10
+-- Question Stretch 1
 SELECT * FROM "accounts"
 WHERE username='anthony';
 
 UPDATE "accounts" SET city="Santa Fe"
 WHERE username='anthony';
 
--- Question 11
+-- Question Stretch 2
 SELECT * FROM "accounts"
 WHERE username='grace';
 
 DELETE FROM "accounts"
 WHERE user_id=9;
 
--- Question 12
+-- Question Stretch 3
+UPDATE "accounts" SET account_balance = account_balance + 20000.00
+WHERE username='travis'
+RETURN username,account_balance;
+
+-- Question Stretch 4
+ALTER TABLE accounts
+ADD COLUMN lastname VARCHAR(12);
